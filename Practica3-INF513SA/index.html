@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 3 INF513 SA</title>
+    <link rel="icon" type="image/png" href="./public/logo.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./public/main.css">
+    <script src="./public/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Practica 3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    INF-513 Grupo 12 SA
+                </span>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <h1>Práctica No 3-SA. Propiedades de los controles HTML y CSS</h1>
+        <br>
+        <h2>Roberto Yunior Dominguez Molina</h2>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="#" method="GET" enctype="multipart/form-data" id="formulario">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre Completo</label>
+                                <input type="text" name="name" placeholder="Introduzca su nombre completo"
+                                    class="form-control" id="nameForm" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" placeholder="nombre@ejemplo.com" class="form-control"
+                                    id="emailForm" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Numero de Telefono</label>
+                                <input type="number" name="phone" placeholder="Introduza su numero de telefono"
+                                    class="form-control" id="phoneForm" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Fecha de Nacimiento</label>
+                                <input type="date" name="date" class="form-control" id="dateForm" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Pais de Origen</label>
+                                <input type="text" name="country" placeholder="Pais" class="form-control"
+                                    id="countryForm" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Archivo Imagen</label>
+                                <input type="file" accept="image/*" class="form-control-file" id="imageForm"
+                                    name="image" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Archivo Video</label>
+                                <input type="file" accept="video/mp4,video/x-m4v,video/*" class="form-control-file"
+                                    id="videoForm" name="video" required>
+                            </div>
+
+                            <button type="button" id="boton" class="btn btn-primary">
+                                Enviar Datos
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <script src="./public/check.js"></script>
+</body>
+
+</html>
