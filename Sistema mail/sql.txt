@@ -1,0 +1,48 @@
+
+create table Unidad(
+codigo varchar(12) not null primary key,
+hora_fin time not null,
+horario_ini time not null,
+nivel int not null,	
+nombre varchar(200) not null,
+planta int not null
+);
+
+create table usuario(
+ci int not null primary key,
+email varchar(200) not null,
+fecha_nac date not null,
+materno varchar(120) not null,	
+nombre varchar(120) not null,
+password varchar(200) not null,
+paterno varchar(120) not null,
+telefono int,
+codigo_unidad varchar(12) not null,
+	foreign key(codigo_unidad) references unidad(codigo) on delete cascade on update cascade
+);
+
+create table Estado(
+id serial not null primary key,
+nombre varchar(20) not null,
+descripcion varchar(200) not null
+);
+
+create table Documento(
+codigo serial not null primary key,
+autor varchar(200) not null,
+titulo varchar(200) not null,
+contenido text not null
+);
+
+create table Tarea(
+id serial not null primary key,
+asunto varchar(200) not null,
+fecha_ingreso date not null,
+mensaje text not null,
+codigo_unidad varchar(12) not null,
+	foreign key(codigo_unidad) references unidad(codigo) on delete cascade on update cascade,
+id_estado int not null,
+	foreign key(id_estado) references estado(id) on delete cascade on update cascade,
+codigo_documento int not null,
+	foreign key(codigo_documento) references documento(codigo) on delete cascade on update cascade
+);
