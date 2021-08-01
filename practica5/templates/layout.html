@@ -1,0 +1,129 @@
+<html>
+<head>
+  <title>{$titulo}</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+  <script>
+  {literal}
+    $(function(){
+        $(".dropdown-trigger").dropdown({
+               hover: true,
+               gutter: 0,
+               coverTrigger: false
+        });   
+    });
+    {/literal}
+  </script>
+</head>
+<body>
+
+
+ <nav>
+ 
+  <nav class="nav-extended">
+ 
+    <div class="nav-wrapper blue darken-4">
+     <div class="container">
+      <a href="#" class="brand-logo">{$titulo}</a>
+      
+       
+      <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+      </a>
+
+      
+      <ul class="right hide-on-med-and-down">
+      {section name=op1 loop=$menu}
+              <li><a class="dropdown-trigger" data-target="submenu-{$menu[op1].name}" href="#">{$menu[op1].name}</a></li>
+               <!-- SubMenu dropdown-->
+            <ul class="dropdown-content blue-text" id="submenu-{$menu[op1].name}">
+            {section name=op2 loop=$menu[op1].subMenu}
+                <li><a class="blue-text text-darken-4" href="{$menu[op1].subMenu[op2].link}">{$menu[op1].subMenu[op2].name}</a></li>
+            {/section}
+            </ul>
+      {/section}
+      </ul>
+      </div>
+    </div>
+    
+    <div class="nav-content hide-on-med-and-down">    
+       <a href="#">
+       <img src="images/{$foto}" alt="" class="circle responsive-img" width="2%" >
+       </a>
+       <a href="#">
+         <span class="name white-text">{$user}</span>
+       </a>
+       <a href="#" >
+        <img class="email white-text right" border="1" src="images/logo_bol.png" alt="" style="padding-right: 10px;padding-left: 10px;">
+        <span class="email white-text right"> {$email} </span>        
+       </a>         
+    </div>
+    
+   </nav>
+    
+  </nav>
+
+  <!-- Menu Responsive -->
+      <ul class="sidenav" id="menu-responsive">
+        <li>
+            <div class="user-view">
+            
+               <div class="background">
+                  <img src="images/fondo3.jpg" alt="">
+               </div>
+               <a href="#">
+               <img src="images/{$foto}" alt="" class="circle">
+               </a>
+               <a href="#">
+               <span class="name white-text"> {$user}    </span>
+               </a>
+               <a href="#">
+               <span class="email white-text"> {$email}   <img border="1" src="images/logo_bol.png" alt="" > </span>
+               
+               </a>                              
+               
+            </div>
+        </li>
+      {section name=op1 loop=$menu}
+          <li><a class="blue darken-4" href="#">{$menu[op1].name}</a></li>
+               <!-- SubMenu Responsive-->
+             {section name=op2 loop=$menu[op1].subMenu}
+                <li><a href="{$menu[op1].subMenu[op2].link}">  {$menu[op1].subMenu[op2].name}</a></li>
+            {/section}           
+      {/section}
+    </ul>
+    
+<br>
+<div class="section container col12">
+ {block name="cuerpo"}{/block}
+</div>
+
+ <!-- Footer -->
+ 
+ 
+        <footer class="page-footer" >
+           <center>{$message}</center>
+          <div class="footer-copyright  blue darken-4">
+          <div class="right hide-on-med-and-down">
+            <img border="0" src="images/apache_pb.gif" width="120" height="17" alt="power by APACHE">
+            <img border="0" src="images/php-power-micro.png" alt="power by PHP">
+            <img border="0" src="images/slonik_m.gif" width="40" height="17" alt="power by PostgreSQL">
+           </div>
+            <div class="container">            
+            <a class="grey-text text-lighten-4 left" href="#">© 2021 Copyright UAGRM-FICCT | INF513 ("Tecnologia Web")</a>            
+            <a class="grey-text text-lighten-4 right" href="https://www.tecnoweb.org.bo">https://www.tecnoweb.org.bo</a>
+            </div>
+          </div>
+        </footer>
+                 
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script >
+{literal}
+ document.addEventListener('DOMContentLoaded',function(){M.AutoInit(); });
+{/literal}
+</script>
+</body>
+</html>

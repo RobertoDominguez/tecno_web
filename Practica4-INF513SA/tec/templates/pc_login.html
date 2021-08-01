@@ -1,0 +1,28 @@
+{extends file="layout.html"}
+
+{block name=contenido}
+
+<form  method="get" action="{$pslogin}">
+   
+      <h2>{$titulo}<br></h2>
+ 
+    <table >
+      <tr>
+        <td width="89">Usuario:</td>
+        <td width="145"><input name="user" type="text"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input name="password" type="password"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><div align="center">
+            <input type="reset" name="Reset" value="Limpiar">
+            <input type="submit" name="Submit" value="Ingresar">
+        </div></td>
+      </tr>
+    </table>
+</form>
+<br>
+
+{/block}

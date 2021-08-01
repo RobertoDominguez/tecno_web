@@ -1,0 +1,29 @@
+{extends file="layout.html"}
+
+{block name=contenido}
+
+<td> <p align="left">Listado de Amigos : <b>{$titulo}</b> </td>
+ <br>
+ 
+ <table>
+  <tr>
+  
+    <td ><b>Nombres Completo</b></td>
+    
+  </tr>
+{section name=pos loop= $amigosFoto}
+
+ <tr>
+    <td >{$amigosFoto[pos].per_appm}  {$amigosFoto[pos].per_nom} {$amigosFoto[pos].per_foto} </td>
+	 <td> ------> </td> 
+        <td>
+           <img  src="imagen/foto1.jpg"  alt="foto1.jpg" width="30%" height="30%" >
+        </td>
+
+       
+  </tr>
+{/section}
+
+</table><br>
+
+{/block}

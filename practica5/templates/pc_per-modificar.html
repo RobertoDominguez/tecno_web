@@ -1,0 +1,52 @@
+<div class="row ">
+    <form class="col s12 center " action="{$ps}" method="post" enctype="multipart/form-data">
+    <div class="row card-panel blue-grey darken-1 white-text">
+	      <h4>{$titulo}</h4>
+	      <input type="hidden" name="opcion" value="{$opcion}"> 
+	      
+	      <div class="row center"> 
+	       
+	       <div class="input-field col s12 ">
+	          <input class="white-text" name="cod" id="cod" type="text" class="validate" required>
+	          <label class="white-text" for="cod">C.I.</label>
+	        </div>  
+	         
+	        <div class="input-field col s12 ">
+	          <input class="white-text" name="nom" id="nom" type="text" class="validate" required>
+	          <label class="white-text" for="nom">Nombres</label>
+	        </div> 
+	        
+	        <div class="input-field col s12 ">
+	          <input class="white-text" name="appm" id="appm" type="text" class="validate" required>
+	          <label class="white-text" for="appm">Apellidos</label>
+	        </div> 
+	       
+	        
+	        <div class="input-field col s12 ">
+	          <input class="white-text" name="telf" id="telf" type="text" class="validate" required>
+	          <label class="white-text" for="telf">Telefono</label>
+	        </div>
+	        
+	        <div class="input-field col s12 ">
+	          <input class="white-text" name="cel" id="cel" type="text" class="validate" required>
+	          <label class="white-text" for="cel">Celular</label>
+	        </div>
+	        
+	        <div class="input-field col s12 ">
+	          <input class="white-text" name="email" id="email" type="email" class="validate" required>
+	          <label class="white-text" for="email">Email</label>
+	        </div>
+	        
+	      
+	     <!--
+	         <div class="input-field col s12 ">
+	          <input class="white-text" name="foto" id="foto" type="file" accept="image/*"  class="validate" required>
+	          <label class="white-text" for="foto">Foto.</label>
+	        </div>
+	     
+	     -->
+	</div>
+	      <button class='btn blue darken-4' type='submit'>Modificar</button>
+	</div>
+    </form>
+</div>

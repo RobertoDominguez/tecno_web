@@ -1,0 +1,25 @@
+{extends file="layout.html"}
+
+{block name="cuerpo"}
+
+<div class="row ">
+    <form class="col s12 center " action="{$ps}" method="GET">
+    <div class="row card-panel blue-grey darken-1 white-text">
+	      <h4>Ingreso</h4>
+	      <div class="row center">
+	        <div class="input-field col s12 ">
+	          <input class="white-text" name="user" id="user" type="text" class="validate" required>
+	          <label class="white-text" for="user">Usuario</label>
+	        </div>       
+
+	        <div class="input-field col s12">
+	          <input class="white-text" name="pass" id="pass" type="password" class="validate" required>
+	          <label class="white-text" for="pass">Password</label>
+	        </div>
+	      </div>
+	      <button class='btn blue darken-4' type="submit">Ingresar</button>
+	</div>
+    </form>
+</div>
+
+{/block}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+    <meta charset="UTF-8">
+    <title>{$titulo}</title>
+    <style type="text/css">
+        .active{
+            text-decoration:none;
+            color:blue;
+        }
+        header{
+            height:30px;
+            width:100%;
+            color:black;
+            background-color: #ff7987;         
+        }
+        footer{
+            height:30px;
+            width:100%;
+            color:black;
+            background-color: #ff7987;         
+        }       
+    </style>
+</head>
+<body>
+    <header>      
+        <nav>   
+        {section name=pos loop= $menu}
+            {if $path eq $path.$menu[pos].url}
+               <a  class='active' href={$path}{$menu[pos].url}>{$menu[pos].name}</a>   
+            {else}
+                <a  href={$path}{$menu[pos].url}>{$menu[pos].name}</a>
+            {/if}
+           
+        {/section}               
+        </nav>
+    </header>
+   
+    {block name=contenido}{/block}
+   
+    <footer>
+    Copyrigth (c) {$smarty.now|date_format:'%Y'}
+    </footer>
+</body>
+</html>
+

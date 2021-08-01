@@ -1,0 +1,35 @@
+{extends file="layout.html"}
+
+{block name=contenido}
+
+<td> <p align="left">Listado de Amigos : <b>{$titulo}</b> </td>
+ <br>
+ 
+ {if $smarty.session.nivel == 0 }
+ <a href="personas.php?opcion=1"> Nuevo</a>
+ {/if}
+ 
+ <table>
+  <tr>
+    <td ><b>C.I.</b></td>
+    <td ><b>Nombres Completo</b></td>
+    <td ><b>Mostrar</b></td>
+    <td ><b>Modificar</b></td> 
+    <td ><b>Eliminar</b></td>
+  </tr>
+{section name=pos loop= $amigos}
+
+  <tr>
+    <td >{$amigos[pos].per_cod}</td>
+    
+    <td >{$amigos[pos].per_appm} {$amigos[pos].per_nom}</td>    
+    <td ><a href= "personas.php?opcion=2&per_cod={$amigos[pos].per_cod}"> Mostrar</a></td>
+    <td ><a href="personas.php?opcion=3&per_cod={$amigos[pos].per_cod}"> Editar</a></td>
+    <td ><a href="personas.php?opcion=4&per_cod={$amigos[pos].per_cod}"> Eliminar</a></td>
+    
+  </tr>
+{/section}
+</table><br>
+
+<td><a href= "ps_imagen.php?">VerFotoLista</a></td> <br>
+{/block}

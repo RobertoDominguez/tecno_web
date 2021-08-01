@@ -1,6 +1,6 @@
 var emailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-$(document).ready(function(){
+$(document).ready(function () {
     //boton y form
     const boton = document.getElementById("boton");
     const form = document.getElementById("formulario");
@@ -10,35 +10,35 @@ $(document).ready(function(){
     const phoneForm = document.getElementById("phoneForm");
     const dateForm = document.getElementById("dateForm");
     const countryForm = document.getElementById("countryForm");
-    const audioForm = document.getElementById("audioForm");
+    const imageForm = document.getElementById("imageForm");
     const videoForm = document.getElementById("videoForm");
 
 
     //escuchamos el evento clik
-    boton.addEventListener("click", async(e)=>{
+    boton.addEventListener("click", async (e) => {
         e.preventDefault();
-        
+
         const name = nameForm.value;
         const phone = phoneForm.value;
         const email = emailForm.value;
         const date = dateForm.value;
         const country = countryForm.value;
 
-        if(vacio(name)){
+        if (vacio(name)) {
             alert("Por favor introducir un nombre valido");
         };
-        if(vacio(phone)){
+        if (vacio(phone)) {
             alert("Por favor introducir un teléfono valido");
         };
-        if(vacio(email)){
+        if (vacio(email)) {
             alert("Por favor introducir un valor en email");
-        }else if(!validarEmail(email)){
+        } else if (!validarEmail(email)) {
             alert("Por favor introducir un email valido");
         };
-        if(vacio(date)){
+        if (vacio(date)) {
             alert("Por favor introducir una fecha valida");
         };
-        if(vacio(country)){
+        if (vacio(country)) {
             alert("Por favor introducir un nombre de pais valido");
         };
         
@@ -47,11 +47,11 @@ $(document).ready(function(){
             !vacio(phone) &&
             validarEmail(email) &&
             !vacio(date) &&
-            !vacio(country)) {       
-        alert("Datos comprobados y enviados exitosamente!");
-        form.submit();
+            !vacio(country)) {
+            alert("Datos comprobados y enviados exitosamente!");
+            form.submit();
         }
-        
+
 
     });
 
@@ -62,8 +62,8 @@ function vacio(dato) {
     return dato === "";
 }
 
-function validarEmail(email){
-    if(email.match(emailformat)){
+function validarEmail(email) {
+    if (email.match(emailformat)) {
         return true;
     };
     return false;

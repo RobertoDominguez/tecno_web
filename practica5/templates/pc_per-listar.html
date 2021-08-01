@@ -1,0 +1,27 @@
+ <p align="left"> <b>{$titulo}</b></td></p>
+ <br>
+ 
+ {if $smarty.session.nivel == 2 }
+ <a href="{$gestor}?opcion={$nuevo}"> Nuevo</a>
+ {/if}
+ 
+ <table>
+  <tr>
+  	<td ><b>Foto </b></td>
+    <td ><b>C.I.</b></td>
+    <td ><b>Nombres Completo</b></td>
+    <td ><b>Opciones</b></td>
+
+  </tr>
+  {section name=pos loop= $amigos}
+  <tr>
+  <td ><b> </b></td>
+  <!--
+  	<td><img src="{$amigos[pos].per_foto}" alt="foto" width="100" height="100"></td> 
+  	-->
+    <td >{$amigos[pos].per_cod}</td>
+    <td >{$amigos[pos].per_appm} {$amigos[pos].per_nom}</td>    
+    <td ><a href="{$gestor}.php?opcion={$mostrar}&per_cod={$amigos[pos].per_cod}"> Detalles</a></td>    
+  </tr>
+  {/section}
+</table><br>
